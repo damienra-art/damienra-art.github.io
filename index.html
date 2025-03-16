@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damien Ra</title>
+    <link rel="icon" href="img/favicon.ico" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const imageFolder = "img/"; // Folder where images are stored
+            const imageCount = 5; // Adjust this based on the number of images you have
+            let images = [];
+            for (let i = 1; i <= imageCount; i++) {
+                images.push(`${imageFolder}${i}.png`); // Assuming images are named 1.jpg, 2.jpg, etc.
+            }
+            let index = 0;
+            const bgElement = document.getElementById("background");
+            function changeBackground() {
+                bgElement.style.backgroundImage = `url(${images[index]})`;
+                index = (index + 1) % images.length;
+            }
+            changeBackground();
+            setInterval(changeBackground, 5000);
+        });
+    </script>
+</head>
+<body>
+    <div id="background"></div>
+    <div class="content brutalist">
+        <h1 class="bold-text">DAMIEN RA</h1>
+        <div class="links brutalist-links">
+            <a href="#">SUBSTACK</a>
+            <a href="#">X (TWITTER)</a>
+            <a href="#">TUMBLR</a>
+            <a href="#">DIGITAL OCEAN</a>
+            <a href="#">OBJKT</a>
+        </div>
+    </div>
+</body>
+</html>
